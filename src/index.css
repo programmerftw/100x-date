@@ -4,10 +4,41 @@
 
 @layer base {
   :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71% 4%;
+    
+    --primary: 286 70% 60%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 199 70% 52%;
+    --secondary-foreground: 222 47% 11%;
+    
+    --accent: 316 70% 50%;
+    --accent-foreground: 210 40% 98%;
+    
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 286 70% 60%;
+
+    --radius: 1rem;
+  }
+
+  .dark {
     --background: 224 71% 4%;
     --foreground: 213 31% 91%;
     
-    /* Cyberpunk-inspired gradient colors */
     --primary: 286 70% 60%;
     --primary-foreground: 210 40% 98%;
     
@@ -32,8 +63,6 @@
     --border: 216 34% 17%;
     --input: 216 34% 17%;
     --ring: 286 70% 60%;
-
-    --radius: 1rem;
   }
 }
 

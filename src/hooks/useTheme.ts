@@ -2,7 +2,14 @@ import { useState, useEffect } from 'react';
 
 export function useTheme() {
   const [theme, setTheme] = useState<'light' | 'dark'>(
-    () => (localStorage.getItem('theme') as 'light' | 'dark') || 'light'
+    () => {
+      // Check system preference first
+      if (typeof window !== 'undefined') {
+        const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        return (localStorage.getItem('theme') as 'light' | 'dark') || systemPreference;
+      }
+      return 'light';
+    }
   );
 
   useEffect(() => {

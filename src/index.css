@@ -4,47 +4,85 @@
 
 @layer base {
   :root {
-    --background: 250 33% 98%;
-    --foreground: 250 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 250 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 250 10% 3.9%;
-    --primary: 250 89% 65%;
-    --primary-foreground: 250 10% 98%;
-    --secondary: 250 30% 96%;
-    --secondary-foreground: 250 10% 10%;
-    --muted: 250 30% 96%;
-    --muted-foreground: 250 10% 46%;
-    --accent: 250 30% 96%;
-    --accent-foreground: 250 10% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 250 30% 90%;
-    --input: 250 30% 90%;
-    --ring: 250 89% 65%;
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    
+    /* Cyberpunk-inspired gradient colors */
+    --primary: 286 70% 60%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 199 70% 52%;
+    --secondary-foreground: 222 47% 11%;
+    
+    --accent: 316 70% 50%;
+    --accent-foreground: 210 40% 98%;
+    
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+    
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+    
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+    
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    --ring: 286 70% 60%;
+
     --radius: 1rem;
   }
+}
 
-  .dark {
-    --background: 20 14.3% 4.1%;
-    --foreground: 60 9.1% 97.8%;
-    --card: 20 14.3% 4.1%;
-    --card-foreground: 60 9.1% 97.8%;
-    --popover: 20 14.3% 4.1%;
-    --popover-foreground: 60 9.1% 97.8%;
-    --primary: 60 9.1% 97.8%;
-    --primary-foreground: 24 9.8% 10%;
-    --secondary: 12 6.5% 15.1%;
-    --secondary-foreground: 60 9.1% 97.8%;
-    --muted: 12 6.5% 15.1%;
-    --muted-foreground: 24 5.4% 63.9%;
-    --accent: 12 6.5% 15.1%;
-    --accent-foreground: 60 9.1% 97.8%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 60 9.1% 97.8%;
-    --border: 12 6.5% 15.1%;
-    --input: 12 6.5% 15.1%;
-    --ring: 24 5.7% 82.9%;
+/* Add custom animations */
+@layer utilities {
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .hover-gradient {
+    background-size: 200% 200%;
+    transition: all 0.3s ease;
+    background-image: linear-gradient(
+      45deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--secondary)) 50%,
+      hsl(var(--accent)) 100%
+    );
+  }
+
+  .hover-gradient:hover {
+    background-position: 100% 100%;
+  }
+
+  .card-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--card)) 0%,
+      hsl(var(--muted)) 100%
+    );
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px hsl(var(--primary) / 0.2),
+                0 0 10px hsl(var(--primary) / 0.2),
+                0 0 15px hsl(var(--primary) / 0.2);
+  }
+  to {
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.4),
+                0 0 20px hsl(var(--primary) / 0.4),
+                0 0 30px hsl(var(--primary) / 0.4);
+  }
+}
+
+/* Add modern font stack */
+@layer base {
+  html {
+    font-family: 'Inter', 'Roboto', system-ui, sans-serif;
   }
 }

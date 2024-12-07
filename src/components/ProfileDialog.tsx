@@ -9,6 +9,8 @@ interface ProfileDialogProps {
     bio: string;
     mainImage: string;
     gallery: Array<{ url: string; description: string }>;
+    programmingLanguage?: string;
+    lookingFor?: string;
   };
   open: boolean;
   onClose: () => void;
@@ -32,12 +34,17 @@ export function ProfileDialog({ profile, open, onClose, isCreating, onSubmit }: 
   return (
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="max-w-2xl h-[80vh] p-0">
-        <Tabs defaultValue="main" className="h-full">
+        <Tabs defaultValue="main" className="h-full flex flex-col">
           <div className="p-6 border-b">
             <h2 className="text-2xl font-bold mb-2">
               {profile.name}, {profile.age}
             </h2>
-            <p className="text-muted-foreground">{profile.bio}</p>
+            <p className="text-muted-foreground mb-2">{profile.bio}</p>
+            {profile.programmingLanguage && (
+              <p className="text-sm text-muted-foreground mb-4">
+                <span className="font-medium">Favorite Language:</span> {profile.programmingLanguage}
+              </p>
+            )}
             <TabsList className="mt-4">
               <TabsTrigger value="main">Main Photo</TabsTrigger>
               {profile.gallery.map((_, idx) => (
@@ -48,9 +55,9 @@ export function ProfileDialog({ profile, open, onClose, isCreating, onSubmit }: 
             </TabsList>
           </div>
 
-          <div className="relative flex-1 overflow-hidden">
-            <TabsContent value="main" className="absolute inset-0">
-              <div className="w-full h-full">
+          <div className="flex-1 relative">
+            <TabsContent value="main" className="absolute inset-0 h-full">
+              <div className="relative w-full h-full">
                 <img
                   src={profile.mainImage}
                   alt={`${profile.name}'s main photo`}
@@ -63,17 +70,21 @@ export function ProfileDialog({ profile, open, onClose, isCreating, onSubmit }: 
               <TabsContent
                 key={idx}
                 value={`photo-${idx}`}
-                className="absolute inset-0"
+                className="absolute inset-0 h-full"
               >
-                <div className="w-full h-full">
+                <div className="relative w-full h-full">
                   <img
                     src={photo.url}
                     alt={`${profile.name}'s photo ${idx + 1}`}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
-                    <p className="text-white">{photo.description}</p>
-                  </div>
+                  {photo.description && (
+                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                      <p className="text-white text-lg leading-relaxed">
+                        {photo.description}
+                      </p>
+                    </div>
+                  )}
                 </div>
               </TabsContent>
             ))}

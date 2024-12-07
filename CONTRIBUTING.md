@@ -13,14 +13,17 @@ Please make sure to read and follow our [Code of Conduct](CODE_OF_CONDUCT.md). I
 ## How to Contribute
 
 ### 1. Reporting Issues
+
 - Use the [issue tracker](link-to-issues) to report bugs or request features.
 - Provide as much detail as possible, including steps to reproduce bugs or a clear description of feature requests.
 
 ### 2. Suggesting Features
+
 - Create a detailed issue describing your idea and why it would benefit the project.
 
 ### 3. Submitting Pull Requests
-- **Submitting Pull Requests**: 
+
+- **Submitting Pull Requests:**
   1. Fork the repository.
   2. Create a branch (`git checkout -b feature-name`).
   3. Commit your changes (`git commit -m 'Description of changes'`).

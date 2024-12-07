@@ -11,6 +11,8 @@ interface ProfileCardProps {
     bio: string;
     mainImage: string;
     gallery: Array<{ url: string; description: string }>;
+    programmingLanguage?: string;
+    lookingFor?: string;
   };
   onAction: (action: 'like' | 'pass') => void;
 }
@@ -42,7 +44,7 @@ export function ProfileCard({ profile, onAction }: ProfileCardProps) {
               className="w-full h-full object-cover"
             />
           </div>
-
+          
           <div className="absolute top-4 left-0 right-0 flex justify-between px-4">
             <Button
               size="icon"

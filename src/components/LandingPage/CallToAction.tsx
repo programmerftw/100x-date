@@ -12,14 +12,13 @@ export function CallToAction({ onGetStarted }: CallToActionProps) {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-purple-600/20" />
           <div className="relative p-12 text-center">
             <h2 className="text-3xl font-bold mb-4">
-              Ready to Find Your Perfect Match?
+              Ready to Find Your Perfect Merge?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join thousands of others who have already found meaningful connections.
-              Your perfect match might be just one click away.
+            Debug your love life and find your perfect match—where code meets chemistry. One swipe could change your repo forever!
             </p>
             <Button size="lg" onClick={onGetStarted} className="rounded-full px-8">
-              Create Your Profile
+              Create Your Love-Life Repo!
             </Button>
           </div>
         </div>

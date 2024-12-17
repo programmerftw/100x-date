@@ -30,7 +30,7 @@ export function Features() {
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4">Why Choose Us</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            We've created the perfect platform for you to find genuine connections
+          We've coded the perfect platform for you to find real connections—no bugs, just pure chemistry.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

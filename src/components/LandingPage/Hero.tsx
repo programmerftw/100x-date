@@ -24,7 +24,7 @@ export function Hero({ onGetStarted }: HeroProps) {
             onClick={onGetStarted} 
             className="rounded-full px-8"
           >
-            Create Your Profile
+            Create Your Profile Repo!
           </Button>
         </div>
       </div>
